@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "EzyFreight SmartForm",
+  "version": "1.0",
+  "description": "Creates a simplified consignment form.",
+
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "*://edi.couriersplease.com.au/index.php"
+      ],
+      "js": [
+        "AddressParser.js",
+        "ParcelsForm.js",
+        "main.js"
+      ]
+    }
+  ]
+}
