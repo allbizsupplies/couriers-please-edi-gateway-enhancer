@@ -82,12 +82,6 @@ class ParcelsForm {
     let totalQty = 0;
     let totalWeight = 0;
     let totalVolume = 0;
-    
-    console.log(`
-      totalQty: ${totalQty}
-      totalWeight: ${totalWeight}
-      totalVolume: ${totalVolume}
-    `);
 
     for (let i = 0; i < this.items.length; i++) {
       totalQty += this.items[i].getQuantity();
