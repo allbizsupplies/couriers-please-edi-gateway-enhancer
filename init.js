@@ -1,5 +1,3 @@
-document.body.style.border = "5px solid red";
-
 const CALCULATED_TEXT_INPUTS = [
   "cd_items",
   "cd_deadweight",
