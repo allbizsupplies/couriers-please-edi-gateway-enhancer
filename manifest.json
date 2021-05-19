@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "EzyFreight SmartForm",
+  "name": "Couriers Please EDI Gateway Enhancer",
   "version": "2.0.0",
-  "description": "Creates a simplified consignment form.",
+  "description": "Improves the usabilitiy of the consignment form.",
 
   "content_scripts": [
     {
