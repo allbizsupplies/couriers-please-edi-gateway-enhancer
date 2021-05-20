@@ -77,8 +77,6 @@ class ParcelsForm {
   }
 
   updateTotals() {
-    console.log(`updateTotals`);
-
     let totalQty = 0;
     let totalWeight = 0;
     let totalVolume = 0;
@@ -253,7 +251,8 @@ class ParcelsFormItem {
       const dim = this.getDim(i);
       volume = (volume * dim) / 100;
     }
-    return volume * this.getQuantity();
+    const totalVolume = volume * this.getQuantity();
+    return parseFloat(totalVolume.toFixed(3));
   }
 
   getWeight() {
@@ -261,7 +260,8 @@ class ParcelsFormItem {
     if (!weight || isNaN(weight)) {
       return 0;
     }
-    return weight * this.getQuantity();
+    const totalWeight = weight * this.getQuantity();
+    return parseInt(totalWeight);
   }
 }
 

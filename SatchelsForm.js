@@ -48,20 +48,33 @@ class SatchelsForm {
     return this.wrapper;
   }
 
+  getSatchelSize() {
+    return this.satchelSizes[this.serviceCode.value];
+  }
+
+  getQuantity() {
+    const value = this.quantityField.value;
+    return value ? parseInt(value) : 0;
+  }
+
+  getTotalWeight() {
+    const quantity = this.getQuantity();
+    const satchelSize = this.getSatchelSize();
+    const totalWeight = (satchelSize.weight * quantity) / 1000;
+    return totalWeight >= 1 ? totalWeight.toFixed(0) : totalWeight > 0 ? 1 : "";
+  }
+
+  getTotalVolume() {
+    const quantity = this.getQuantity();
+    const satchelSize = this.getSatchelSize();
+    const totalVolume = (satchelSize.volume * quantity) / (100 * 100 * 100);
+    return totalVolume > 0 ? totalVolume.toFixed(3) : "";
+  }
+
   updateTotals() {
-    const quantity = this.quantityField.value;
-
-    const satchelSize = this.satchelSizes[this.serviceCode.value];
-
-    const totalQty = quantity ? parseInt(quantity) : "";
-    const totalWeight = quantity ? (satchelSize.weight * totalQty) / 1000 : "";
-    const totalVolume = quantity
-      ? (satchelSize.volume * totalQty) / (100 * 100 * 100)
-      : "";
-
-    this.totalQtyField.value = totalQty;
-    this.totalWeightField.value = totalWeight;
-    this.totalVolField.value = totalVolume;
+    this.totalQtyField.value = this.getQuantity();
+    this.totalWeightField.value = this.getTotalWeight();
+    this.totalVolField.value = this.getTotalVolume();
   }
 
   hide() {
