@@ -1,14 +1,32 @@
 {
   "manifest_version": 2,
   "name": "Couriers Please EDI Gateway Enhancer",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Improves the usabilitiy of the consignment form.",
 
   "content_scripts": [
     {
       "run_at": "document_end",
-      "matches": ["*://edi.couriersplease.com.au/index.php"],
-      "js": ["ParcelsForm.js", "SatchelsForm.js", "init.js"]
+      "matches": ["*://edi.couriersplease.com.au/*"],
+      "js": [
+        "main.js",
+        "loginForm.js",
+        "ParcelsForm.js",
+        "SatchelsForm.js",
+        "consignmentForm.js"
+      ]
     }
-  ]
+  ],
+
+  "options_ui": {
+    "page": "options.html"
+  },
+
+  "permissions": ["storage"],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "couriers_please_edi_gateway_enhancer@allbizsupplies.biz"
+    }
+  }
 }
