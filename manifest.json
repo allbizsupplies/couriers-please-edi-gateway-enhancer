@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Couriers Please EDI Gateway Enhancer",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Improves the usabilitiy of the consignment form.",
 
   "content_scripts": [
@@ -14,7 +14,8 @@
         "ParcelsForm.js",
         "SatchelsForm.js",
         "consignmentForm.js"
-      ]
+      ],
+      "css": ["styles.css"]
     }
   ],
 

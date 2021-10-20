@@ -1,0 +1,42 @@
+#cppledilist td,
+#consignments td {
+    vertical-align: middle;
+}
+
+#cppledilist a,
+#consignments a {
+    padding: 0.5em;
+    display: block;
+    margin: 0.25em;
+}
+
+#cppledilist a[href^="javascript:runConnotePDF"],
+#cppledilist a[href^="javascript:runManifestPDF"],
+#consignments a[href^="javascript:runConnotePDF"] {
+    color: black;
+    background: rgb(187, 187, 187);
+}
+
+#cppledilist a[href^="javascript:runLabelPDF"],
+#consignments a[href^="javascript:runLabelPDF"] {
+    color: white;
+    background: cornflowerblue;
+}
+
+#cppledilist a[href^="javascript:runModify"],
+#consignments a[href^="javascript:runModify"] {
+    color: black;
+    background: rgb(255, 187, 0);
+}
+
+#cppledilist a[href^="javascript:runDelete"],
+#consignments a[href^="javascript:runDelete"] {
+    color: white;
+    background: orangered;
+}
+
+#cppledilist a[href^="javascript:runRelease"],
+#consignments a[href^="javascript:toggleAll"] {
+    color: white;
+    background: rgb(34, 129, 34);
+}
